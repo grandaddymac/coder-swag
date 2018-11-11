@@ -24,6 +24,7 @@ class CategoriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         return DataService.instance.getCategories().count
     }
     
+    //Create a reusable cell at the indexPath
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell {
             let category = DataService.instance.getCategories()[indexPath.row]
